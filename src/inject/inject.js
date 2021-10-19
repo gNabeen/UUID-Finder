@@ -8,8 +8,6 @@ chrome.extension.sendMessage({}, function (response) {
 				n = document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0];
 			else
 				n = document.documentElement.innerHTML.split('pageNameDetailed":"')[1].split('"')[0];
-			// e.textContent = n, document.body.appendChild(e), t.removeAllRanges(), e.select(), document.execCommand("copy"), t.removeAllRanges(), document.body.removeChild(e), document.body.innerHTML.replace(new RegExp("This problem has been solved!", "g"), n);;
-			// document.body.innerHTML = document.body.innerHTML.replace(new RegExp("This problem has been solved!", "g"), n);
 			var toolbarHeight = 50;
 
 			var div = document.createElement("div");
