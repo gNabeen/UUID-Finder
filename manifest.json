@@ -16,7 +16,6 @@
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
-    "contentSettings",
     "https://www.chegg.com/*"
   ],
   "content_scripts": [
