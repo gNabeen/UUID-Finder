@@ -3,11 +3,13 @@ chrome.extension.sendMessage({}, function (response) {
 		if (document.readyState === "complete") {
 			clearInterval(readyStateCheckInterval);
 
-			var n = "Unable to get uuid"
-			if (document.documentElement.innerHTML.indexOf('uuid":"') >= 0)
-				n = document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0];
-			else
+			var n = "";
+			if (document.documentElement.innerHTML.indexOf('uuid":"') >= 0 && document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0].split("-") > 1)
+				n = document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0].split("-");
+			else if (document.documentElement.innerHTML.indexOf('pageNameDetailed":"') >= 0 && document.documentElement.innerHTML.split('pageNameDetailed":"')[1].split("-")[0] > 1)
 				n = document.documentElement.innerHTML.split('pageNameDetailed":"')[1].split('"')[0];
+			else
+				n = "This url is not supported!"
 			var toolbarHeight = 50;
 
 			var div = document.createElement("div");
