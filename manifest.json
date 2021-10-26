@@ -1,6 +1,6 @@
 {
   "name": "UUID Finder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "This extension will automatically display the UUID at the top of the page.",
   "homepage_url": "http://www.professorbot.me",

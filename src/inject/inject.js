@@ -4,9 +4,9 @@ chrome.extension.sendMessage({}, function (response) {
 			clearInterval(readyStateCheckInterval);
 
 			var n = "";
-			if (document.documentElement.innerHTML.indexOf('uuid":"') >= 0 && document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0].split("-") > 1)
-				n = document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0].split("-");
-			else if (document.documentElement.innerHTML.indexOf('pageNameDetailed":"') >= 0 && document.documentElement.innerHTML.split('pageNameDetailed":"')[1].split("-")[0] > 1)
+			if (document.documentElement.innerHTML.indexOf('uuid":"') >= 0 && document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0].split("-").length > 1)
+				n = document.documentElement.innerHTML.split('uuid":"')[1].split('"')[0];
+			else if (document.documentElement.innerHTML.indexOf('pageNameDetailed":"') >= 0 && document.documentElement.innerHTML.split('pageNameDetailed":"')[1].split('"')[0].split("-").length > 1)
 				n = document.documentElement.innerHTML.split('pageNameDetailed":"')[1].split('"')[0];
 			else
 				n = "This url is not supported!"
